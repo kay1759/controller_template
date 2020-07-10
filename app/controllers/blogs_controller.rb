@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @resources = Blog.all
   end
 
   # GET /blogs/1
@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/new
   def new
-    @blog = Blog.new
+    @resource = Blog.new
   end
 
   # GET /blogs/1/edit
@@ -24,15 +24,15 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    @resource = Blog.new(resource_params)
 
     respond_to do |format|
-      if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
+      if @resource.save
+        format.html { redirect_to @resource, notice: 'Blog was successfully created.' }
+        format.json { render :show, status: :created, location: @resource }
       else
         format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        format.json { render json: @resource.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,12 +41,12 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
-      if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
+      if @resource.update(resource_params)
+        format.html { redirect_to @resource, notice: 'Blog was successfully updated.' }
+        format.json { render :show, status: :ok, location: @resource }
       else
         format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        format.json { render json: @resource.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +54,7 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1
   # DELETE /blogs/1.json
   def destroy
-    @blog.destroy
+    @resource.destroy
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
       format.json { head :no_content }
@@ -64,11 +64,11 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      @resource = Blog.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def blog_params
+    def resource_params
       params.require(:blog).permit(:name, :title, :content)
     end
 end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "blogs/new", type: :view do
   before(:each) do
-    assign(:blog, FactoryBot.build(:blog))
+    @resource = assign(:blog, FactoryBot.build(:blog))
   end
 
   it "renders new blog form" do

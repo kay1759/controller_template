@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "blog_posts/show", type: :view do
   before(:each) do
     @blog = assign(:blog, FactoryBot.create(:blog))
-    @blog_post = assign(:blog_post, FactoryBot.create(:blog_post))
+    @resource = assign(:blog_post, FactoryBot.create(:blog_post))
   end
 
   it "renders attributes in <p>" do

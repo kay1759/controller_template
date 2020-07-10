@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "people/index", type: :view do
   before(:each) do
-    assign(:people, [
+    @resources = assign(:people, [
              FactoryBot.create(:people),
              FactoryBot.create(:people)
     ])

@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
+    @resources = Person.all
   end
 
   # GET /people/1
@@ -14,7 +14,7 @@ class PeopleController < ApplicationController
 
   # GET /people/new
   def new
-    @person = Person.new
+    @resource = Person.new
   end
 
   # GET /people/1/edit
@@ -24,15 +24,15 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
-    @person = Person.new(person_params)
+    @resource = Person.new(resource_params)
 
     respond_to do |format|
-      if @person.save
-        format.html { redirect_to @person, notice: 'Person was successfully created.' }
-        format.json { render :show, status: :created, location: @person }
+      if @resource.save
+        format.html { redirect_to @resource, notice: 'Person was successfully created.' }
+        format.json { render :show, status: :created, location: @resource }
       else
         format.html { render :new }
-        format.json { render json: @person.errors, status: :unprocessable_entity }
+        format.json { render json: @resource.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,12 +41,12 @@ class PeopleController < ApplicationController
   # PATCH/PUT /people/1.json
   def update
     respond_to do |format|
-      if @person.update(person_params)
-        format.html { redirect_to @person, notice: 'Person was successfully updated.' }
-        format.json { render :show, status: :ok, location: @person }
+      if @resource.update(resource_params)
+        format.html { redirect_to @resource, notice: 'Person was successfully updated.' }
+        format.json { render :show, status: :ok, location: @resource }
       else
         format.html { render :edit }
-        format.json { render json: @person.errors, status: :unprocessable_entity }
+        format.json { render json: @resource.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +54,7 @@ class PeopleController < ApplicationController
   # DELETE /people/1
   # DELETE /people/1.json
   def destroy
-    @person.destroy
+    @resource.destroy
     respond_to do |format|
       format.html { redirect_to people_url, notice: 'Person was successfully destroyed.' }
       format.json { head :no_content }
@@ -64,11 +64,11 @@ class PeopleController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_person
-      @person = Person.find(params[:id])
+      @resource = Person.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def person_params
+    def resource_params
       params.require(:person).permit(:name, :email, :age)
     end
 end

@@ -4,7 +4,7 @@ class BlogPostsController < ApplicationController
   # GET /blog_posts
   # GET /blog_posts.json
   def index
-    @blog_posts = BlogPost.all
+    @resources = BlogPost.all
   end
 
   # GET /blog_posts/1
@@ -14,7 +14,7 @@ class BlogPostsController < ApplicationController
 
   # GET /blog_posts/new
   def new
-    @blog_post = BlogPost.new
+    @resource = BlogPost.new
   end
 
   # GET /blog_posts/1/edit
@@ -24,15 +24,15 @@ class BlogPostsController < ApplicationController
   # POST /blog_posts
   # POST /blog_posts.json
   def create
-    @blog_post = BlogPost.new(blog_post_params)
+    @resource = BlogPost.new(resource_params)
 
     respond_to do |format|
-      if @blog_post.save
-        format.html { redirect_to @blog_post, notice: 'Blog post was successfully created.' }
-        format.json { render :show, status: :created, location: @blog_post }
+      if @resource.save
+        format.html { redirect_to @resource, notice: 'Blog post was successfully created.' }
+        format.json { render :show, status: :created, location: @resource }
       else
         format.html { render :new }
-        format.json { render json: @blog_post.errors, status: :unprocessable_entity }
+        format.json { render json: @resource.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,12 +41,12 @@ class BlogPostsController < ApplicationController
   # PATCH/PUT /blog_posts/1.json
   def update
     respond_to do |format|
-      if @blog_post.update(blog_post_params)
-        format.html { redirect_to @blog_post, notice: 'Blog post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog_post }
+      if @resource.update(resource_params)
+        format.html { redirect_to @resource, notice: 'Blog post was successfully updated.' }
+        format.json { render :show, status: :ok, location: @resource }
       else
         format.html { render :edit }
-        format.json { render json: @blog_post.errors, status: :unprocessable_entity }
+        format.json { render json: @resource.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +54,7 @@ class BlogPostsController < ApplicationController
   # DELETE /blog_posts/1
   # DELETE /blog_posts/1.json
   def destroy
-    @blog_post.destroy
+    @resource.destroy
     respond_to do |format|
       format.html { redirect_to blog_posts_url, notice: 'Blog post was successfully destroyed.' }
       format.json { head :no_content }
@@ -64,11 +64,11 @@ class BlogPostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog_post
-      @blog_post = BlogPost.find(params[:id])
+      @resource = BlogPost.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def blog_post_params
+    def resource_params
       params.require(:blog_post).permit(:blog_id, :name, :title, :content)
     end
 end

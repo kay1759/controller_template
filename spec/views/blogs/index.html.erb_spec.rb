@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "blogs/index", type: :view do
   before(:each) do
-    assign(:blogs, [
+    @resources = assign(:blogs, [
              FactoryBot.create(:blogs),
              FactoryBot.create(:blogs)
     ])

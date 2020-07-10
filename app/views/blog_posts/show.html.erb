@@ -2,23 +2,23 @@
 
 <p>
   <strong>Blog:</strong>
-  <%= @blog_post.blog_id %>
+  <%= @resource.blog_id %>
 </p>
 
 <p>
   <strong>Name:</strong>
-  <%= @blog_post.name %>
+  <%= @resource.name %>
 </p>
 
 <p>
   <strong>Title:</strong>
-  <%= @blog_post.title %>
+  <%= @resource.title %>
 </p>
 
 <p>
   <strong>Content:</strong>
-  <%= @blog_post.content %>
+  <%= @resource.content %>
 </p>
 
-<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+<%= link_to 'Edit', edit_blog_post_path(@resource) %> |
 <%= link_to 'Back', blog_posts_path %>

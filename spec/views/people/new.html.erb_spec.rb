@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "people/new", type: :view do
   before(:each) do
-    assign(:person, FactoryBot.build(:person))
+    @resource = assign(:person, FactoryBot.build(:person))
   end
 
   it "renders new person form" do
