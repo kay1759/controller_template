@@ -20,7 +20,7 @@
         <td><%= person.age %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><form method="post" name="resouce_delete" action="/people/<%= person.id %>"><input type="hidden" name="_method" value="delete" /><%= hidden_field_tag :authenticity_token, form_authenticity_token %><a href="javascript:resouce_delete.submit()">Destory</a></form></td>
       </tr>
     <% end %>
   </tbody>

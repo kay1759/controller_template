@@ -31,6 +31,12 @@ saved to git branch **instance-variable**<br />
 saved to git branch **main**<br />
 * create resources_controller.rb and update controllers to inherit it<br />
 
+### bug fix (not main theme for this)
+
+* the Destory links of all 3 index views do not work.
+
+* fix the bug after implements 'Rails Controller Template'.
+
 ## Environment:
 Programing environment is as below.
 
