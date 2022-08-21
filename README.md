@@ -38,11 +38,19 @@ saved to git branch **main**<br />
 * fix the bug after implements 'Rails Controller Template'.
 
 ## Environment:
+Latest environment is as below.
+
+* Arch Linux version 5.19.2-arch1-1
+* ruby 3.0.2p20
+* Rails 7.0.3.1
+
+
 Programing environment is as below.
 
 * Ubuntu 18.04.1 LTS x86_64
 * ruby 2.7.1p83
 * Rails 6.0.3.2
+
 
 
 ## Application Installation Instructions:
