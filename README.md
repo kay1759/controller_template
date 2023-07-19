@@ -32,6 +32,13 @@ saved to git branch **main**<br />
 * create resources_controller.rb and update controllers to inherit it<br />
 
 ## Environment:
+Latest environment is as below.
+
+* Arch Linux version 6.4.1-arch2-1
+* ruby 3.1.2p20
+* Rails 7.0.5.1
+
+
 Programing environment is as below.
 
 * Ubuntu 18.04.1 LTS x86_64
@@ -40,7 +47,7 @@ Programing environment is as below.
 
 
 ## Application Installation Instructions:
-    git clone git@github.com:kay1759/controller_template.git
+    git clone https://github.com/kay1759/controller_template.git
     cd controller_template
 	bundle install --path vendor/bundle
     bundle exec rake db:migrate
