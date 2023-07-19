@@ -31,18 +31,12 @@ saved to git branch **instance-variable**<br />
 saved to git branch **main**<br />
 * create resources_controller.rb and update controllers to inherit it<br />
 
-### bug fix (not main theme for this)
-
-* the Destory links of all 3 index views do not work.
-
-* fix the bug after implements 'Rails Controller Template'.
-
 ## Environment:
 Latest environment is as below.
 
-* Arch Linux version 5.19.2-arch1-1
-* ruby 3.0.2p20
-* Rails 7.0.3.1
+* Arch Linux version 6.4.1-arch2-1
+* ruby 3.1.2p20
+* Rails 7.0.5.1
 
 
 Programing environment is as below.
@@ -52,9 +46,8 @@ Programing environment is as below.
 * Rails 6.0.3.2
 
 
-
 ## Application Installation Instructions:
-    git clone git@github.com:kay1759/controller_template.git
+    git clone https://github.com/kay1759/controller_template.git
     cd controller_template
 	bundle install --path vendor/bundle
     bundle exec rake db:migrate
